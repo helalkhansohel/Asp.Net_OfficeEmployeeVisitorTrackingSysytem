@@ -156,13 +156,36 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CompaniesController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OfficesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201810030511434_initialState.cs" />
     <Compile Include="Migrations\201810030511434_initialState.Designer.cs">
       <DependentUpon>201810030511434_initialState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810030832531_AddEmployeeStatus.cs" />
+    <Compile Include="Migrations\201810030832531_AddEmployeeStatus.Designer.cs">
+      <DependentUpon>201810030832531_AddEmployeeStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810030908453_addAdminCompanyInfo.cs" />
+    <Compile Include="Migrations\201810030908453_addAdminCompanyInfo.Designer.cs">
+      <DependentUpon>201810030908453_addAdminCompanyInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810030914485_CompanyIdAutoIncrement.cs" />
+    <Compile Include="Migrations\201810030914485_CompanyIdAutoIncrement.Designer.cs">
+      <DependentUpon>201810030914485_CompanyIdAutoIncrement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810030930078_AddforeignKeyInEmploye.cs" />
+    <Compile Include="Migrations\201810030930078_AddforeignKeyInEmploye.Designer.cs">
+      <DependentUpon>201810030930078_AddforeignKeyInEmploye.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810031022029_addCompanyIdtoOffice.cs" />
+    <Compile Include="Migrations\201810031022029_addCompanyIdtoOffice.Designer.cs">
+      <DependentUpon>201810031022029_addCompanyIdtoOffice.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -179,6 +202,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Documentation\Company status field.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -213,6 +237,27 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Shared\_LayoutExecutive.cshtml" />
+    <Content Include="Views\Companies\Create.cshtml" />
+    <Content Include="Views\Companies\Delete.cshtml" />
+    <Content Include="Views\Companies\Details.cshtml" />
+    <Content Include="Views\Companies\Edit.cshtml" />
+    <Content Include="Views\Companies\Index.cshtml" />
+    <Content Include="Views\Home\AdminHome.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Offices\Create.cshtml" />
+    <Content Include="Views\Offices\Delete.cshtml" />
+    <Content Include="Views\Offices\Details.cshtml" />
+    <Content Include="Views\Offices\Edit.cshtml" />
+    <Content Include="Views\Offices\Index.cshtml" />
+    <Content Include="Views\Offices\Office.cshtml" />
+    <Content Include="Views\Offices\Employee.cshtml" />
+    <Content Include="Views\Offices\CompanyOfficeReport.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -233,6 +278,21 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201810030511434_initialState.resx">
       <DependentUpon>201810030511434_initialState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810030832531_AddEmployeeStatus.resx">
+      <DependentUpon>201810030832531_AddEmployeeStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810030908453_addAdminCompanyInfo.resx">
+      <DependentUpon>201810030908453_addAdminCompanyInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810030914485_CompanyIdAutoIncrement.resx">
+      <DependentUpon>201810030914485_CompanyIdAutoIncrement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810030930078_AddforeignKeyInEmploye.resx">
+      <DependentUpon>201810030930078_AddforeignKeyInEmploye.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810031022029_addCompanyIdtoOffice.resx">
+      <DependentUpon>201810031022029_addCompanyIdtoOffice.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,3 @@
+﻿1)I have sum 100 to every employee Id just to show in report. so if in database Employee Id is 1 then in Report it is 101 .
+    <span> @Convert.ToInt32( @item.Id+100)</span>
+2)In case of the admin wants to delete a company use username attribute in company as status.

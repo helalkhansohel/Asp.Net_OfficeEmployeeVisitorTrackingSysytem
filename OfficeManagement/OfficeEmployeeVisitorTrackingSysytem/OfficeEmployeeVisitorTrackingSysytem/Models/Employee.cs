@@ -17,10 +17,10 @@ namespace OfficeEmployeeVisitorTrackingSysytem.Models
             Visitors = new HashSet<Visitor>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+       
         public int Id { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [ForeignKey("Company")]
         public int CompanyID { get; set; }
 
         public string Name { get; set; }
@@ -32,6 +32,7 @@ namespace OfficeEmployeeVisitorTrackingSysytem.Models
         public string Address { get; set; }
 
         public string Password { get; set; }
+        public string Status { get; set; }
 
         public virtual Company Company { get; set; }
 

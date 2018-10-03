@@ -12,6 +12,8 @@ namespace OfficeEmployeeVisitorTrackingSysytem.Models
         public int Id { get; set; }
 
         public int? EmployeeId { get; set; }
+        [ForeignKey("Company")]
+        public int? CompanyId { get; set; }
 
         public DateTime? Date { get; set; }
 
@@ -22,5 +24,6 @@ namespace OfficeEmployeeVisitorTrackingSysytem.Models
         public string CurrentStatus { get; set; }
 
         public virtual Employee Employee { get; set; }
+        public virtual Company Company { get; set; }
     }
 }
