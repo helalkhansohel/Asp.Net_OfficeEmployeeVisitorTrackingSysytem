@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeEmployeeVisitorTrackingSysytem", "OfficeEmployeeVisitorTrackingSysytem\OfficeEmployeeVisitorTrackingSysytem.csproj", "{8EE03C86-7EE2-46E0-9167-EEDA32C3D44A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8EE03C86-7EE2-46E0-9167-EEDA32C3D44A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EE03C86-7EE2-46E0-9167-EEDA32C3D44A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EE03C86-7EE2-46E0-9167-EEDA32C3D44A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EE03C86-7EE2-46E0-9167-EEDA32C3D44A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59F67E17-EA82-4AE7-8E79-CAC38AA15D26}
+	EndGlobalSection
+EndGlobal
