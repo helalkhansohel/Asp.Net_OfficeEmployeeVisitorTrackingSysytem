@@ -21,6 +21,12 @@ namespace OfficeEmployeeVisitorTrackingSysytem.Controllers
             return View(employees.ToList());
         }
 
+        public ActionResult CompanyIndex(int? id)
+        {
+            var employees = db.Employees.Include(e => e.Company).Where(x=>x.CompanyID==id);
+            return View(employees.ToList());
+        }
+
         // GET: Employees/Details/5
         public ActionResult Details(int? id)
         {
@@ -62,6 +68,33 @@ namespace OfficeEmployeeVisitorTrackingSysytem.Controllers
             return View(employee);
         }
 
+
+        public ActionResult CompanyCreate()
+        {
+            ViewBag.CompanyID = new SelectList(db.Companies, "Id", "Name");
+            return View();
+        }
+
+        // POST: Employees/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CompanyCreate([Bind(Include = "Id,CompanyID,Name,Email,Phone,Address,Password,Status")] Employee employee)
+        {
+            if (ModelState.IsValid)
+            {
+                employee.Status = "Active";
+                employee.CompanyID = Convert.ToInt32(Session["CompanyId"]);
+                db.Employees.Add(employee);
+                db.SaveChanges();
+                return RedirectToAction("CompanyIndex", "Employees",new { id= Convert.ToInt32(Session["CompanyId"]) });
+            }
+
+            ViewBag.CompanyID = new SelectList(db.Companies, "Id", "Name", employee.CompanyID);
+            return View(employee);
+        }
+
         // GET: Employees/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -87,6 +120,7 @@ namespace OfficeEmployeeVisitorTrackingSysytem.Controllers
         {
             if (ModelState.IsValid)
             {
+                employee.CompanyID = @Convert.ToInt32(Session["CompanyId"]);
                 db.Entry(employee).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

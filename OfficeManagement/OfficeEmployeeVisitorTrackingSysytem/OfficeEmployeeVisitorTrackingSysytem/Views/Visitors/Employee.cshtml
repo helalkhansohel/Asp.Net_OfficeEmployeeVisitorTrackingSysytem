@@ -1,0 +1,47 @@
+﻿@model IEnumerable<OfficeEmployeeVisitorTrackingSysytem.Models.Employee>
+
+@{
+    ViewBag.Title = "Employee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h2>Employee</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Registerd ID")
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        <tr>
+
+            <td>
+                <a href="@Url.Action("Create","Visitors",new {id=@item.Id,type="1" })">
+                    <span> @Convert.ToInt32(@item.Id + 100)</span>
+                </a>
+
+            </td>
+            <td>
+                <a href="@Url.Action("Create","Visitors",new {id=@item.Id,type="1" })">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </a>
+            </td>
+
+        </tr>
+
+    }
+
+</table>

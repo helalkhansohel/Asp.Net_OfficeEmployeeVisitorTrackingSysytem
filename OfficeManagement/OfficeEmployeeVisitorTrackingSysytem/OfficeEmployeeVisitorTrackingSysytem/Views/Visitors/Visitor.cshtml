@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Visitor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div style="background-color:green; height:400px;%;">
+    <center style="background-color:wheat;"><h2>Wel come to Visitors at ...</h2></center>
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <a href="/Visitors/Company" class="btn btn-warning" style="height:200px;width:300px;font-size:70px;color:black;float:right;background-color:white;">Sign In</a>
+        </div>
+
+        <div class="col-md-6">
+            <a  href="@Url.Action("Create","Visitors", new { id=0 , type="2"})" class="btn btn-default" style="height:200px;width:300px;font-size:70px;color:black; background-color:red;float:left">Sign out</a>
+        </div>
+    </div>
+
+</div>
+

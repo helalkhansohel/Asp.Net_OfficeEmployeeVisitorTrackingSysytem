@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "AdminLogIn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Admin LogIn</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<table>
+
+    <tr><td>Email Id :</td><td><input type="email" name="email" id="email"></td></tr>
+    <tr><td>Password :</td><td><input type="password" name="pass" id="pass"></td></tr>
+    <tr><td></td><td><input type="submit" value="Sign In"></td></tr>
+    <tr><td></td><td>
+        @if (ViewBag.Message!=null) {
+            <span class="alert alert-danger">@ViewBag.Message</span>
+        }
+        </td></tr>
+
+</table>
+}
+

@@ -1,11 +1,11 @@
 ﻿@model OfficeEmployeeVisitorTrackingSysytem.Models.Company
 
 @{
-    ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "CompanyDetails";
+    Layout = "~/Views/Shared/_LayoutExecutive.cshtml";
 }
 
-<h2>Details</h2>
+<h2>CompanyDetails</h2>
 
 <div>
     <h4>Company</h4>
@@ -69,7 +69,13 @@
 
     </dl>
 </div>
-@*<p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>*@
+
+<hr>
+
+
+    <a href="/Employees/CompanyCreate/@Convert.ToInt32(Session["CompanyId"])" class="btn btn-warning">Employee Register</a>
+    <a href="/Offices/CompanyOfficeReport/@Convert.ToInt32(Session["CompanyId"])" class="btn btn-danger">Office Report</a>
+     <a href="/HotDesks/ComapanyHotDesk/@Convert.ToInt32(Session["CompanyId"])" class="btn btn-primary">Hot Desk report</a>
+    <a href="/Visitors/CompanyVisitorReport/@Convert.ToInt32(Session["CompanyId"])" class="btn btn-success">Visitors Report</a>
+
+   <a href="/Employees/CompanyIndex/@Convert.ToInt32(Session["CompanyId"])" class="btn btn-info">Employee Report</a>

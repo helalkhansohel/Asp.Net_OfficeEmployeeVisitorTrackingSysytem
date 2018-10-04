@@ -1,9 +1,18 @@
 ﻿
 @{
     ViewBag.Title = "AdminHome";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Admin Home</h2>
+<center><h2>Welcome to Admin Panel</h2></center>
 
-<a href="/Companies/Index" class="btn btn-danger">Register Company</a>  <a href="/Employees/Index" class="btn btn-primary">Employee Company</a>
+<h3>Report </h3>
+<a href="/Offices/Index" class="btn btn-danger">Office Report</a>  <a href="/HotDesks/Index" class="btn btn-primary">Hot Desk report</a> <a href="/Visitors/Index" class="btn btn-warning">Visitors Report</a>
+<hr>
+<h3>Comapany and Employee Register</h3>
+<a href="/Companies/Index" class="btn btn-info">Register Company</a>  <a href="/Employees/Index" class="btn btn-primary">Employee Company</a>
+<hr>
+<h3>Admin company</h3>
+<a href="/Admins/Index" class="btn btn-success">Admin Company</a>
+
+

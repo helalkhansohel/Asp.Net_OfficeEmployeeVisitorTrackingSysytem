@@ -156,11 +156,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminsController.cs" />
     <Compile Include="Controllers\CompaniesController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HotDesksController.cs" />
     <Compile Include="Controllers\OfficesController.cs" />
+    <Compile Include="Controllers\VisitorsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -265,6 +267,26 @@
     <Content Include="Views\HotDesks\Edit.cshtml" />
     <Content Include="Views\HotDesks\Index.cshtml" />
     <Content Include="Views\HotDesks\HotDesk.cshtml" />
+    <Content Include="Views\HotDesks\ComapanyHotDesk.cshtml" />
+    <Content Include="Views\Visitors\Create.cshtml" />
+    <Content Include="Views\Visitors\Delete.cshtml" />
+    <Content Include="Views\Visitors\Details.cshtml" />
+    <Content Include="Views\Visitors\Edit.cshtml" />
+    <Content Include="Views\Visitors\Index.cshtml" />
+    <Content Include="Views\Visitors\Visitor.cshtml" />
+    <Content Include="Views\Visitors\Company.cshtml" />
+    <Content Include="Views\Visitors\Employee.cshtml" />
+    <Content Include="Views\Visitors\CompanyVisitorReport.cshtml" />
+    <Content Include="Views\Employees\CompanyIndex.cshtml" />
+    <Content Include="Views\Employees\CompanyCreate.cshtml" />
+    <Content Include="Views\Admins\Create.cshtml" />
+    <Content Include="Views\Admins\Delete.cshtml" />
+    <Content Include="Views\Admins\Details.cshtml" />
+    <Content Include="Views\Admins\Edit.cshtml" />
+    <Content Include="Views\Admins\Index.cshtml" />
+    <Content Include="Views\Home\AdminLogIn.cshtml" />
+    <Content Include="Views\Home\ExecutiveLogIn.cshtml" />
+    <Content Include="Views\Companies\CompanyDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -10,127 +10,107 @@ using OfficeEmployeeVisitorTrackingSysytem.Models;
 
 namespace OfficeEmployeeVisitorTrackingSysytem.Controllers
 {
-    public class CompaniesController : Controller
+    public class AdminsController : Controller
     {
         private ApplicationContext db = new ApplicationContext();
 
-        // GET: Companies
+        // GET: Admins
         public ActionResult Index()
         {
-            return View(db.Companies.ToList());
+            return View(db.Admins.ToList());
         }
 
-        // GET: Companies/Details/5
+        // GET: Admins/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Company company = db.Companies.Find(id);
-            if (company == null)
+            Admin admin = db.Admins.Find(id);
+            if (admin == null)
             {
                 return HttpNotFound();
             }
-            return View(company);
+            return View(admin);
         }
 
-        public ActionResult CompanyDetails(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Company company = db.Companies.Find(id);
-            if (company == null)
-            {
-                return HttpNotFound();
-            }
-            return View(company);
-        }
-
-        // GET: Companies/Create
+        // GET: Admins/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Companies/Create
+        // POST: Admins/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,OfficeNumber,Username,Password,Email,Phone,Address")] Company company)
+        public ActionResult Create([Bind(Include = "Id,Name,Email,Password,Company,Address,Phone,Details")] Admin admin)
         {
-            var user = db.Companies.FirstOrDefault(x => x.Email == company.Email);
-            if (user!=null) {
-                ViewBag.Message = "this email already exists, try to use another email.";
-                return View(company);
-            }
-
             if (ModelState.IsValid)
             {
-                db.Companies.Add(company);
+                db.Admins.Add(admin);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(company);
+            return View(admin);
         }
 
-        // GET: Companies/Edit/5
+        // GET: Admins/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Company company = db.Companies.Find(id);
-            if (company == null)
+            Admin admin = db.Admins.Find(id);
+            if (admin == null)
             {
                 return HttpNotFound();
             }
-            return View(company);
+            return View(admin);
         }
 
-        // POST: Companies/Edit/5
+        // POST: Admins/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,OfficeNumber,Username,Password,Email,Phone,Address")] Company company)
+        public ActionResult Edit([Bind(Include = "Id,Name,Email,Password,Company,Address,Phone,Details")] Admin admin)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(company).State = EntityState.Modified;
+                db.Entry(admin).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(company);
+            return View(admin);
         }
 
-        // GET: Companies/Delete/5
+        // GET: Admins/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Company company = db.Companies.Find(id);
-            if (company == null)
+            Admin admin = db.Admins.Find(id);
+            if (admin == null)
             {
                 return HttpNotFound();
             }
-            return View(company);
+            return View(admin);
         }
 
-        // POST: Companies/Delete/5
+        // POST: Admins/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Company company = db.Companies.Find(id);
-            db.Companies.Remove(company);
+            Admin admin = db.Admins.Find(id);
+            db.Admins.Remove(admin);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

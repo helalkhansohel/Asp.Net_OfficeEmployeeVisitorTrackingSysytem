@@ -118,6 +118,7 @@ namespace OfficeEmployeeVisitorTrackingSysytem.Controllers
 
                 var data1 = db.HotDesks.ToArray().LastOrDefault(x => x.EmployeeId == EId);
                 HotDesk hotDesk1 = db.HotDesks.Find(data1.Id);
+
                 if (ModelState.IsValid)
                 {
                     hotDesk1.LogOutTime = d;
@@ -140,18 +141,9 @@ namespace OfficeEmployeeVisitorTrackingSysytem.Controllers
 
           
 
-            if (ModelState.IsValid)
-            {
-                db.HotDesks.Add(hotDesk);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.CompanyId = new SelectList(db.Companies, "Id", "Name", hotDesk.CompanyId);
-            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "Name", hotDesk.EmployeeId);
-            return View(hotDesk);
+            
         }
-
+        [NonAction]
         // GET: HotDesks/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -186,7 +178,7 @@ namespace OfficeEmployeeVisitorTrackingSysytem.Controllers
             ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "Name", hotDesk.EmployeeId);
             return View(hotDesk);
         }
-
+        [NonAction]
         // GET: HotDesks/Delete/5
         public ActionResult Delete(int? id)
         {

@@ -172,7 +172,7 @@ namespace OfficeEmployeeVisitorTrackingSysytem.Controllers
             ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "Name", office.EmployeeId);
             return View(office);
         }
-
+        [NonAction]
         // POST: Offices/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -189,7 +189,7 @@ namespace OfficeEmployeeVisitorTrackingSysytem.Controllers
             ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "Name", office.EmployeeId);
             return View(office);
         }
-
+        [NonAction]
         // GET: Offices/Delete/5
         public ActionResult Delete(int? id)
         {
