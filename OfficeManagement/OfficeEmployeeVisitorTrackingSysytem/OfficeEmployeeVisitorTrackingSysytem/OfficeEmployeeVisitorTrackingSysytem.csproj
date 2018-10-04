@@ -159,6 +159,7 @@
     <Compile Include="Controllers\CompaniesController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HotDesksController.cs" />
     <Compile Include="Controllers\OfficesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -258,6 +259,12 @@
     <Content Include="Views\Offices\Office.cshtml" />
     <Content Include="Views\Offices\Employee.cshtml" />
     <Content Include="Views\Offices\CompanyOfficeReport.cshtml" />
+    <Content Include="Views\HotDesks\Create.cshtml" />
+    <Content Include="Views\HotDesks\Delete.cshtml" />
+    <Content Include="Views\HotDesks\Details.cshtml" />
+    <Content Include="Views\HotDesks\Edit.cshtml" />
+    <Content Include="Views\HotDesks\Index.cshtml" />
+    <Content Include="Views\HotDesks\HotDesk.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
